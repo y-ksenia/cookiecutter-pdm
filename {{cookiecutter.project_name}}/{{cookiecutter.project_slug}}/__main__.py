@@ -1,17 +1,19 @@
 # type: ignore[attr-defined]
+from typing import Optional
+
 import logging
 from enum import Enum
 from random import choice
-from typing import Optional
 
 import typer
 from rich.console import Console
-
 from {{cookiecutter.project_slug}} import __version__
 from {{cookiecutter.project_slug}}.example import hello
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-logging.getLogger("my_python_project").setLevel(logging.DEBUG)
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+)
+logging.getLogger("{{ cookiecutter.project_slug }}").setLevel(logging.DEBUG)
 
 
 class Color(str, Enum):
