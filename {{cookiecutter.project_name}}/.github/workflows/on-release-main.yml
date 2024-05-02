@@ -6,6 +6,7 @@ on:
     branches: [main]
 
 jobs:
+
   {% if cookiecutter.publish_to != "none" %}
   publish:
     runs-on: ubuntu-latest
@@ -41,6 +42,7 @@ jobs:
           {%- endif %}
   {% endif %}
   {%- if cookiecutter.mkdocs == "y" %}
+
   deploy-docs:
     {%- if cookiecutter.publish_to != "none" %}
     needs: publish
@@ -55,4 +57,5 @@ jobs:
 
       - name: Deploy documentation
         run: pdm run mkdocs gh-deploy --force
+
   {% endif %}

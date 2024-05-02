@@ -58,7 +58,7 @@ docs = [
 ]
 
 [tool.black]
-line-length = 120
+line-length = 100
 target-version = ['py38']
 preview = true
 
@@ -87,7 +87,7 @@ ignore_obsolete = ["cookiecutter"]
 
 [tool.ruff]
 target-version = "py38"
-line-length = 120
+line-length = 100
 fix = true
 select = [
     # flake8-2020

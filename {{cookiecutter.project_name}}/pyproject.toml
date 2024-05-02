@@ -59,7 +59,7 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [tool.black]
-line-length = 120
+line-length = {{ cookiecutter.line_length }}
 target-version = ["py{{ merged_python_version }}"]
 preview = true
 
@@ -76,7 +76,7 @@ show_error_codes = "True"
 
 [tool.ruff]
 target-version = "py{{ merged_python_version }}"
-line-length = 120
+line-length = {{ cookiecutter.line_length }}
 fix = true
 select = [
     # flake8-2020

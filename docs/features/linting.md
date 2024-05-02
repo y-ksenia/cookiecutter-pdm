@@ -16,7 +16,7 @@ This command will run the following tools:
 
 ```toml
 [tool.black]
-line-length = 120
+line-length = 100
 include = '\.pyi?$'
 target-version = ['py39']
 fast = true
@@ -32,7 +32,7 @@ will not work, see also [here](https://stackoverflow.com/a/61046953/8037249).
 ```
 [tool.ruff]
 target-version = "py38"
-line-length = 120
+line-length = 100
 fix = false
 select = [
     # flake8-2020
