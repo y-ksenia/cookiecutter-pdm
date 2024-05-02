@@ -1,6 +1,6 @@
 {%- set python_version_splitted = cookiecutter.minimal_python_version.split('.') | map('int') | list -%}
 {%- set merged_python_version = cookiecutter.minimal_python_version.replace('.', '') -%}
-{%- set username = cookiecutter.username.replace(" ", "-") -%}
+{%- set username = cookiecutter.author_github_handle.replace(" ", "-") -%}
 
 [project]
 name = "{{cookiecutter.project_slug}}"
