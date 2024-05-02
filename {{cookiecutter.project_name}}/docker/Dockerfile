@@ -24,7 +24,7 @@ RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
 ENV PATH=/root/.local/bin:$PATH
 
 # Project initialization:
-RUN pdm install --no-self
+RUN pdm install --no-self --group main
 
 # Copy project sources into image
 COPY README.md ./

@@ -19,7 +19,8 @@ license = {text = "{{cookiecutter.open_source_license}}"}
 keywords = ['python']
 
 [tool.pdm.version]
-version = "{{cookiecutter.version}}"
+source = "file"
+path = "{{cookiecutter.project_slug}}/__init__.py"
 
 [project.urls]
 Homepage = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
