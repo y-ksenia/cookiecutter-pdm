@@ -19,8 +19,7 @@ license = {text = "{{cookiecutter.open_source_license}}"}
 keywords = ['python']
 
 [tool.pdm.version]
-source = "file"
-path = "{{cookiecutter.project_slug}}/__init__.py"
+source = "scm"
 fallback_version = "{{cookiecutter.version}}"
 
 [project.urls]
