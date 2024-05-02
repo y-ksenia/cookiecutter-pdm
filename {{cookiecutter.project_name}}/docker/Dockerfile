@@ -20,7 +20,8 @@ WORKDIR /workspace
 COPY pdm.lock pyproject.toml ./
 
 # Install PDM
-RUN url -sSL https://pdm-project.org/install-pdm.py | python3 -
+RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
+ENV PATH=/root/.local/bin:$PATH
 
 # Project initialization:
 RUN pdm install --no-self
@@ -28,5 +29,3 @@ RUN pdm install --no-self
 # Copy project sources into image
 COPY README.md ./
 COPY {{cookiecutter.project_slug}} ./{{cookiecutter.project_slug }}/
-
-CMD [ "python", "{{cookiecutter.project_slug}}//foo.py"]

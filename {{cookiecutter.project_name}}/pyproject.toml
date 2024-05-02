@@ -13,13 +13,13 @@ readme = "README.md"
 packages = [
   {include = "{{cookiecutter.project_slug}}"}
 ]
-requires-python = "=={{ cookiecutter.minimal_python_version }}.*"
+requires-python = "=={{cookiecutter.minimal_python_version}}.*"
 dependencies = []
 license = {text = "{{cookiecutter.open_source_license}}"}
 keywords = ['python']
 
 [tool.pdm.version]
-source = "scm"
+version = "{{cookiecutter.username}}"
 
 [project.urls]
 Homepage = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
