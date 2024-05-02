@@ -21,6 +21,7 @@ keywords = ['python']
 [tool.pdm.version]
 source = "file"
 path = "{{cookiecutter.project_slug}}/__init__.py"
+fallback_version = "{{cookiecutter.version}}"
 
 [project.urls]
 Homepage = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
