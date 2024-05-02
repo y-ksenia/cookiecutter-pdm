@@ -1,4 +1,6 @@
-FROM python:{{ cookiecutter.minimal_python_version }}-slim-buster
+# syntax=docker/dockerfile:1
+
+FROM  python:{{cookiecutter.minimal_python_version}}-slim-buster
 
 # Prepare system environment
 ENV LANG=C.UTF-8 \
@@ -14,23 +16,17 @@ RUN apt-get update && \
 RUN mkdir -p /workspace
 WORKDIR /workspace
 
-# Copy project dependencies list to setup first and cache
-COPY pyproject.toml poetry.lock Makefile ./
+# Copy only requirements to cache them in docker layer
+COPY pdm.lock pyproject.toml ./
 
-# Install Poetry
-ENV POETRY_HOME=/opt/poetry
-RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.4.0 && \
-    cd /usr/local/bin && \
-    ln -s /opt/poetry/bin/poetry && \
-    # Install all packages into system env
-    poetry config virtualenvs.create false
+# Install PDM
+RUN url -sSL https://pdm-project.org/install-pdm.py | python3 -
 
-# Install main packages without dev - only core dependencies
-RUN poetry install --only main --no-root
+# Project initialization:
+RUN pdm install --no-self
 
 # Copy project sources into image
 COPY README.md ./
 COPY {{ cookiecutter.project_slug }} ./{{ cookiecutter.project_slug }}/
 
-# Install root as package
-RUN poetry install --only-root
+CMD [ "python", "{{cookiecutter.project_slug}}//foo.py"]
