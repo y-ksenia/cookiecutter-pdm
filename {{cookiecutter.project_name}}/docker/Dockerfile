@@ -16,19 +16,16 @@ RUN apt-get update && \
 RUN mkdir -p /workspace
 WORKDIR /workspace
 
-# Copy only requirements to cache them in docker layer
-COPY pdm.lock pyproject.toml ./
-
 # Install PDM
-RUN curl -sSL https://pdm-project.org/install-pdm.py | python3 -
-ENV PATH=/root/.local/bin:$PATH
-
-# Project initialization:
-RUN pdm install --prod --no-self
+RUN pip install -U pdm
+ENV PDM_CHECK_UPDATE=false
 
 # Copy project sources into image
-COPY README.md ./
-COPY {{cookiecutter.project_slug}} ./{{cookiecutter.project_slug }}/
+COPY pdm.lock pyproject.toml README.md  ./
+COPY my_python_project ./my_python_project/
 
-RUN pdm install --prod
-CMD [ "python", "my_python_project/example.py", "-name", "{{cookiecutter.username}}"]
+# Install dependencies and project into the local packages directory
+RUN pdm install --check --prod --no-editable
+
+# Retrieve packages
+CMD ["pdm", "run", "python", "my_python_project", "--name", "{{cookiecutter.username}}"]
