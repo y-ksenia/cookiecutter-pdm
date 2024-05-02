@@ -12,6 +12,7 @@
         "3.10",
         "3.11"
       ],
+    "line_length": 100,
     "include_github_actions": ["y","n"],
     "publish_to": ["pypi", "artifactory", "none"],
     "deptry": ["y", "n"],
