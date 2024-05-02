@@ -12,7 +12,7 @@ repos:
       - id: end-of-file-fixer
         exclude: LICENSE
       - id: trailing-whitespace
-        exclude: ^exports/
+        exclude: '(^exports|.github)/.*'
       - id: mixed-line-ending
         args: ["--fix=lf"]
       - id: check-merge-conflict
