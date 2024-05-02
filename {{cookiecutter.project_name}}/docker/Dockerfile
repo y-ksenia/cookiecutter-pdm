@@ -27,6 +27,6 @@ RUN pdm install --no-self
 
 # Copy project sources into image
 COPY README.md ./
-COPY {{ cookiecutter.project_slug }} ./{{ cookiecutter.project_slug }}/
+COPY {{cookiecutter.project_slug}} ./{{cookiecutter.project_slug }}/
 
 CMD [ "python", "{{cookiecutter.project_slug}}//foo.py"]
