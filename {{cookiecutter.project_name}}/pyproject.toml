@@ -14,7 +14,12 @@ packages = [
   {include = "{{cookiecutter.project_slug}}"}
 ]
 requires-python = "=={{cookiecutter.minimal_python_version}}.*"
-dependencies = []
+dependencies = [
+  "typer>=0.9.0",
+  "rich>=10.7.0",
+  "python-dotenv>=1.0.1",
+  "envyaml>=1.10.211231",
+]
 license = {text = "{{cookiecutter.open_source_license}}"}
 keywords = ['python']
 

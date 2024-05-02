@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM  python:{{cookiecutter.minimal_python_version}}-slim-buster
+FROM python:{{cookiecutter.minimal_python_version}}-slim-buster
 
 # Prepare system environment
 ENV LANG=C.UTF-8 \
@@ -31,4 +31,4 @@ COPY README.md ./
 COPY {{cookiecutter.project_slug}} ./{{cookiecutter.project_slug }}/
 
 RUN pdm install --prod
-CMD [ "python", "{{cookiecutter.project_slug}}/foo.py"]
+CMD [ "python", "my_python_project/example.py", "-name", "{{cookiecutter.username}}"]

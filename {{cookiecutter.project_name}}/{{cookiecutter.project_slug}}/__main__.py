@@ -1,12 +1,14 @@
-# type: ignore[attr-defined]
-from typing import Optional
+# flake8: noqa: B008
+
 
 import logging
 from enum import Enum
 from random import choice
 
 import typer
+from typing import Optional
 from rich.console import Console
+
 from {{cookiecutter.project_slug}} import __version__
 from {{cookiecutter.project_slug}}.example import hello
 
