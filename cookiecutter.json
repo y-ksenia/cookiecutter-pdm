@@ -4,7 +4,7 @@
     "project_description": "Awesome `{{cookiecutter.project_name.lower().replace(' ', '-')}}` project!",
     "author": "Awesome user",
     "email": "awesome-user@example.com",
-    "author_github_handle" : "awesome-user",
+    "username" : "awesome-user",
     "version": "0.1.0",
     "minimal_python_version": [
         "3.8",

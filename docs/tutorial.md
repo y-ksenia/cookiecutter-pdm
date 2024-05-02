@@ -115,7 +115,7 @@ Give your release a title, and add a new tag in the form `*.*.*` where the
 ## Step 10: Enable your documentation
 
 In your repository, navigate to ``Settings > Code and Automation > Pages``. If you succesfully created a new release,
-you should see a notification saying `` Your site is ready to be published at https://<author_github_handle>.github.io/<project_name>/``.
+you should see a notification saying `` Your site is ready to be published at https://<username>.github.io/<project_name>/``.
 
 To finalize deploying your documentation, under ``Source``, select the branch ``gh-pages``.
 

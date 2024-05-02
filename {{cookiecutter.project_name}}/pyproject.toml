@@ -1,6 +1,6 @@
 {%- set python_version_splitted = cookiecutter.minimal_python_version.split('.') | map('int') | list -%}
 {%- set merged_python_version = cookiecutter.minimal_python_version.replace('.', '') -%}
-{%- set username = cookiecutter.author_github_handle.replace(" ", "-") -%}
+{%- set username = cookiecutter.username.replace(" ", "-") -%}
 
 [project]
 name = "{{cookiecutter.project_slug}}"
@@ -22,9 +22,9 @@ keywords = ['python']
 source = "scm"
 
 [project.urls]
-Homepage = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
-Repository = "https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}"
-Documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
+Homepage = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
+Repository = "https://github.com/{{cookiecutter.username}}/{{cookiecutter.project_name}}"
+Documentation = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
 
 [tool.pdm.dev-dependencies]
 test = [

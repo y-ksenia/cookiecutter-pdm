@@ -13,7 +13,7 @@ prompt values and their explanation are as follows:
 
 Your email address.
 
-**author_github_handle**
+**username**
 
 Your github handle, i.e. `<handle>` in `https://github.com/<handle>`
 
