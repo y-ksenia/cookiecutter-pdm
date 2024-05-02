@@ -19,7 +19,7 @@ license = {text = "{{cookiecutter.open_source_license}}"}
 keywords = ['python']
 
 [tool.pdm.version]
-version = "{{cookiecutter.username}}"
+version = "{{cookiecutter.version}}"
 
 [project.urls]
 Homepage = "https://{{cookiecutter.username}}.github.io/{{cookiecutter.project_name}}/"
