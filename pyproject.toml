@@ -2,7 +2,10 @@
 name = "cookiecutter-pdm"
 description = "A python cookiecutter application to create a new python project that uses PDM to manage its dependencies."
 authors = [
+    {name = "Roman Tezikov", email = "tez.romach@gmail.com"},
+    {name = "Aleksey Devyatkin", email = "alexey4dev@gmail.com"},
     {name = "Florian Maas", email = "info@fpgmaas.com"},
+    {name = "Kseniia Alekseitseva", email = "xeniayagafarova@gmail.com"},
 ]
 readme = "README.md"
 keywords = ['cookiecutter', 'template', 'PDM']
@@ -30,9 +33,9 @@ source-includes = [
 ccpdm = 'cookiecutter_pdm.cli:main'
 
 [project.urls]
-Repository = "https://github.com/fpgmaas/cookiecutter-pdm"
-Documentation = "https://fpgmaas.github.io/cookiecutter-pdm/"
-Homepage = "https://fpgmaas.github.io/cookiecutter-pdm/"
+Repository = "https://github.com/y_ksenia/cookiecutter-pdm"
+Documentation = "https://y_ksenia.github.io/cookiecutter-pdm/"
+Homepage = "https://y_ksenia.github.io/cookiecutter-pdm/"
 
 [build-system]
 requires = ["pdm-backend"]

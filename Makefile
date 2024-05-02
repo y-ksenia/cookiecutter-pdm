@@ -10,9 +10,9 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 bake-and-test-deploy: ## For quick publishing to cookiecutter-pdm-example to test GH Actions
 	@rm -rf cookiecutter-pdm-example || true
 	@cookiecutter --no-input . --overwrite-if-exists \
-		author="Florian Maas" \
-		email="fpgmaas@gmail.com" \
-		github_author_handle=fpgmaas \
+		author="Kseniia Alekseitseva" \
+		email="xeniayagafarova@gmail.com" \
+		github_author_handle="y_ksenia \
 		project_name=cookiecutter-pdm-example \
 		project_slug=cookiecutter_pdm_example
 	@cd cookiecutter-pdm-example; pdm install && \
@@ -24,7 +24,7 @@ bake-and-test-deploy: ## For quick publishing to cookiecutter-pdm-example to tes
 		pdm run pre-commit run -a || true && \
 		git add . && \
 		git commit -m "init commit" && \
-		git remote add origin git@github.com:fpgmaas/cookiecutter-pdm-example.git && \
+		git remote add origin git@github.com:y_ksenia/cookiecutter-pdm-example.git && \
 		git push -f origin main
 
 
