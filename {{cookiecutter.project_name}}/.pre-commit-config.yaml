@@ -1,13 +1,34 @@
+{%- set merged_python_version = cookiecutter.minimal_python_version.replace('.', '') -%}
+
+default_stages: [commit, push]
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: "v4.4.0"
     hooks:
-      - id: check-case-conflict
-      - id: check-merge-conflict
-      - id: check-toml
       - id: check-yaml
+      - id: check-toml
+      - id: check-json
       - id: end-of-file-fixer
+        exclude: LICENSE
       - id: trailing-whitespace
+        exclude: ^exports/
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+      - id: check-merge-conflict
+      - id: check-ast
+      - id: check-executables-have-shebangs
+      - id: debug-statements
+      - id: check-added-large-files
+        args: ["--maxkb=100"]
+        exclude: |
+          (?x)^(
+            ^exports/|
+            ^pdm.lock
+          )$
+      - id: check-docstring-first
+      - id: detect-private-key
+      - id: check-case-conflict
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: "v0.0.230"
